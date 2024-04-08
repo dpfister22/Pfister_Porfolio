@@ -106,17 +106,16 @@ def open_browser(driver):
     assert "Google Sheets" in driver.title
     time.sleep(5)
 
-
 def find_and_replace(driver, action):
     for f, r in zip(imgur_find, imgur_replace):
         action = ActionChains(driver)
         action.key_down(Keys.CONTROL).send_keys("h").key_up(Keys.CONTROL).perform()
         time.sleep(2)
         # Instering info find box
-        eval(f), print("Pasting Find Value") and time.sleep(1)
+        eval(f), print("Pasting Find Value")
         action.send_keys(Keys.TAB).perform()
         # Instering into replace box
-        eval(r), print("Pasting Replace Value") and time.sleep(1)
+        eval(r), print("Pasting Replace Value")
         # Click correct option boxes
         print("\nSelecting Options")
         driver.find_element(
@@ -125,14 +124,11 @@ def find_and_replace(driver, action):
         driver.find_element(
             By.CSS_SELECTOR, "div.waffle-find-replace-option:nth-child(5)"
         ).click()
-        driver.find_element(By.NAME, "findNext").click(), print("Finding") 
-            and time.sleep(1)
-        driver.find_element(By.NAME, "replaceAll").click(), print("Replacing") 
-            and time.sleep(3)
+        driver.find_element(By.NAME, "findNext").click(), print("Finding")
+        driver.find_element(By.NAME, "replaceAll").click(), print("Replacing")
         # Confirming actions
-        driver.find_element(
-            By.XPATH, '//button[@class="goog-buttonset-default goog-buttonset-action"]'
-        ).click(), time.sleep(2)
+        element = WebDriverWait(driver, 2).until( EC.element_to_be_clickable((By.XPATH, ('//button[@class="goog-buttonset-default goog-buttonset-action"]'))))
+        element.click()
         driver.find_element(By.NAME, "done").click()
     driver.close()
     print("\ncomplete")
