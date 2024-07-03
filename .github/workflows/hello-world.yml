@@ -1,0 +1,16 @@
+#Learning GitHub Actions
+#Followed instructions in https://www.linkedin.com/learning/data-pipeline-automation-with-github-actions-using-r-and-python
+name: Hello World!
+
+on:
+  schedule:
+    - cron: "0 12 1 */6 *"
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-22.04
+    container:
+      image: rkrispin/data-pipeline-automation-with-github-actions:prod
+    steps:
+      - name: print-hello-world
+        run: echo "Hello World!"
