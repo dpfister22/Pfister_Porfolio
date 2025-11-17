@@ -4,10 +4,10 @@ BRANCH="master"
 #This was writen based on a course on LinkedIn learning with some minor adjustments.
 
 # Save the current time into a log file
-echo "Current Date:" >> ./code/bash/log.txt && date '+%Y-%m-%d' >> ./code/bash/log.txt
-echo "Current Time:" >> ./code/bash/log.txt && date '+%r' >> ./code/bash/log.txt
-echo "Epoch Time:" >> ./code/bash/log.txt && date '+%s' >> ./code/bash/log.txt
-echo " " >> ./code/bash/log.txt
+echo "Current Date:" >> ./bash/log.txt && date '+%Y-%m-%d' >> ./bash/log.txt
+echo "Current Time:" >> ./bash/log.txt && date '+%r' >> ./bash/log.txt
+echo "Epoch Time:" >> ./bash/log.txt && date '+%s' >> ./bash/log.txt
+echo " " >> ./bash/log.txt
 
 # Commit
 p=$(pwd)
