@@ -14,11 +14,7 @@ p=$(pwd)
 git config --global --add safe.directory $p
 
 if [[ "$(git status --porcelain)" != "" ]]; then
-    git config --global user.name $USER_NAME
-    git config --global user.email $USER_EMAIL
-    git add ./bash/log.txt
-    git commit -m "Update the log"
-    git push origin $BRANCH
+echo "Changes will be commited to branch"
 else
 echo "Nothing to commit..."
 fi
