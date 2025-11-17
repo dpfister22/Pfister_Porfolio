@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-BRANCH="master"
+BRANCH="main"
 
 #This was writen based on a course on LinkedIn learning with some minor adjustments.
 
