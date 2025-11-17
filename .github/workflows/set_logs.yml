@@ -24,6 +24,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git add ./code/bash/log.txt
+          git add ./bash/log.txt
           git commit -m "Update the log"
           git push https://x-access-token:${GITHUB_TOKEN}@github.com/dpfister22/Personal_Portfolio.git HEAD:main
